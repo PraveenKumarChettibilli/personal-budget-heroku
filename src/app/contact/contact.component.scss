@@ -2,13 +2,8 @@
   height: fit-content;
 }
 
-#signup {
+#contactUs {
   text-align: center;
-  padding: 20px;
-  background-color: #b4c6f0;
-  color: white;
-  font-family: Helvetica;
-  font-size: 200%;
 }
 
 #content {
@@ -57,25 +52,29 @@ label {
 }
 
 #username {
-  width: 80%;
+  width: 40%;
   height: 23px;
 }
 
 #password {
-  width: 80%;
+  width: 40%;
   height: 23px;
 }
 
 #email {
-  width: 80%;
+  width: 40%;
   height: 23px;
 }
 
 #description {
   height: 50px;
-  width: 80%;
+  width: 40%;
 }
 
 #emaillabel {
   margin-right: 2.7%;
+}
+
+.container{
+  text-align: center;
 }
