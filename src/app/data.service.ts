@@ -41,10 +41,6 @@ export class DataService {
   constructor(private http: HttpClient,public router: Router,public toastr:ToastrService) {
     this.isOpenModel.next(false);
   }
-  // An if-else statment where we are populating an Observable and checking it before out API call.
-  // If it's empty only then call to API is made.
-  // If not then data is read from the Observable.
-  // tslint:disable-next-line: typedef
     getBudgetData(username): Observable<any> {
         const token = localStorage.getItem('accessToken');
         const body=JSON.stringify(username);
@@ -122,7 +118,7 @@ export class DataService {
 
             if (TokenNotExpired && lessThanTwentySecRemaining && this.logouthandler) {
               let message = confirm(
-                'Your session is going to expire in a few seconds! click OK to extend the session!'
+                'Your session is going to expire in a 20 seconds! click OK to extend the session!'
               );
               if(message && this.logouthandler){
                 console.log("okay clicked");
@@ -169,51 +165,6 @@ export class DataService {
     }
 
    }
-
-
-
-    // Code for firebase integration
-  // constructor(public afs: AngularFirestore) {
-  //   // this.budgetCollection = afs.collection<BudgetSchema>('budgetData');
-  //   // this.budgetData = this.budgetCollection.valueChanges();
-  //   //this.budgetData = this.afs.collection('budgetData').valueChanges();
-  //   this.budgetCollection = this.afs.collection('budget');
-  //   this.budgetData = this.budgetCollection.valueChanges();
-
-  //   this.feedbackCollection = this.afs.collection('feedback');
-  //   this.feedbackData = this.feedbackCollection.valueChanges();
-
-  //   this.userCollection = this.afs.collection('users');
-  //   this.userData = this.userCollection.valueChanges();
-
-
-
-  // }
-
-  // getData(){
-  //   return this.budgetData;
-  // }
-
-  // getFeedbackData(){
-  //   return this.feedbackData;
-  // }
-
-  // getUserData(){
-  //   return this.userData;
-  // }
-
-  // createNewFeedBack(record){
-  //   return this.afs.collection('feedback').add(record);
-  // }
-
-  // createNewBudget(record){
-  //   return this.afs.collection('budget').add(record);
-  // }
-
-  // addNewUser(record){
-  //   return this.afs.collection('users').add(record);
-  // }
-
 
 
 
